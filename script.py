@@ -73,11 +73,12 @@ def main() -> None:
         email=os.getenv("EMAIL"),
     )
     db.to_csv("submission_db.csv", index=False)
-    print("Submission Database crated!")
+    print("Submission Database created!")
 
     df = pd.read_csv("./submission_db.csv")
     driver = get_keys(df)
     driver = submit_form()
+    print("Form submitted!")
     return
 
 
