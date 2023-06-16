@@ -10,7 +10,9 @@
 
 3. Run `csv_helper.py` to create a `submission_db.csv` file in the main directory. This module is not called in `script.py`.
 
-4. Run the script in your IDE to check for any error(s), if none, schedule the script to run at your convenience.
+4. Run `script.py` in your IDE to check for any error(s). On the initial run, the application requires you to login with the e-mail that receives the meeting link[^1].
+
+5. No need to login again after the initial run[^2]. The script is fully automated. Schedule it at your convenience.
 ---
 ### Folder Structure:
 The folder structure should look something like this.
@@ -22,6 +24,7 @@ $ tree
 │   │   └── <some cache file>
 │   ├── .env
 │   ├── browser_helper.py
+│   ├── gmail_helper.py
 │   └── csv_helper.py
 ├── .vscode
 │   └── settings.json
@@ -32,7 +35,12 @@ $ tree
 ├── geckodriver.log
 ├── script.py
 ├── submission_db.csv
+├── credentials.json
+├── token.json
 └── README.md
 
 3 directories, 7 files
 ```
+
+[^1]: This is done to fetch the mail from your gmail and the 'joining link' with it.
+[^2]: A `token.json` file is automatically generated, that handles the authentication for any subsequent runs.
