@@ -19,12 +19,12 @@ $ tree
 .
 ├── helpers
 │   ├── __pycache__
-|   |   └── <some cache file>
-|   ├── .env
-|   ├── browser_helper.py
+│   │   └── <some cache file>
+│   ├── .env
+│   ├── browser_helper.py
 │   └── csv_helper.py
 ├── .vscode
-|   └── settings.json
+│   └── settings.json
 ├── .gitignore
 ├── requirements.txt
 ├── chromedriver.exe
