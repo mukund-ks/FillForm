@@ -1,3 +1,5 @@
 .env
 submission_db.csv
 geckodriver.log
+credentials.json
+token.json

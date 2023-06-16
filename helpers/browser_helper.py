@@ -25,6 +25,7 @@ driver = webdriver.Firefox(service=service)
 
 
 def get_keys(df) -> webdriver.Firefox:
+    print('get keys')
     first_name = df["first_name"][0]
     last_name = df["last_name"][0]
     email = df["email"][0]
