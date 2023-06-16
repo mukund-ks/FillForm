@@ -39,8 +39,7 @@ $ tree
 ├── token.json
 └── README.md
 
-3 directories, 7 files
 ```
 
 [^1]: This is done to fetch the mail from your gmail and the 'joining link' with it.
-[^2]: A `token.json` file is automatically generated, that handles the authentication for any subsequent runs.
+[^2]: A `token.json` file is automatically generated that handles the authentication for any subsequent runs.
