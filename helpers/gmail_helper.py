@@ -51,9 +51,13 @@ def get_link():
     )
 
     # print(unread_msgs)
-    mssg_list = unread_msgs["messages"]
+    try:
+        mssg_list = unread_msgs["messages"]
+    except:
+        print('Meeting mail not found.')
+        return
 
-    print(f"Total unread messages in inbox: {str(len(mssg_list))}")
+    print(f"Meeting mail found!")
 
     for mssg in mssg_list:
         temp_dict = {}
