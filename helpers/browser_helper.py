@@ -25,7 +25,7 @@ driver = webdriver.Firefox(service=service)
 
 
 def get_keys(df) -> webdriver.Firefox:
-    print('get keys')
+    print('Getting Keys...')
     first_name = df["first_name"][0]
     last_name = df["last_name"][0]
     email = df["email"][0]
@@ -40,5 +40,6 @@ def get_keys(df) -> webdriver.Firefox:
 
 
 def submit_form() -> webdriver.Firefox:
+    print('Submitting form...')
     driver.find_element(By.XPATH, submit_element_xpath).click()
     return driver

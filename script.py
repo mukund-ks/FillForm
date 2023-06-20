@@ -8,6 +8,7 @@ from gmail_helper import get_link
 
 sys.path.append(".")
 
+print('Opening Browser...')
 driver.get(url)
 driver.implicitly_wait(15)
 
