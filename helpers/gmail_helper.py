@@ -14,6 +14,7 @@ from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
+
 # from googleapiclient.errors import HttpError
 
 # If modifying these scopes, delete the file token.json.
@@ -44,17 +45,14 @@ def get_link():
         # Call the Gmail API
     service = build("gmail", "v1", credentials=creds)
     unread_msgs = (
-        service.users()
-        .messages()
-        .list(userId="me", labelIds=["INBOX", "UNREAD"])
-        .execute()
+        service.users().messages().list(userId="me", labelIds=["INBOX", "UNREAD"]).execute()
     )
 
     # print(unread_msgs)
     try:
         mssg_list = unread_msgs["messages"]
     except:
-        print('Meeting mail not found.')
+        print("Meeting mail not found.")
         return
 
     print(f"Meeting mail found!")
@@ -102,12 +100,18 @@ def get_link():
             links = hrefSoup.find_all(
                 "a", href=re.compile("^https://training.ethnus.com/meeting/register/")
             )
-            
+
             final = {"link": ""}
             for link in links:
                 final["link"] = link.get("href")
-            
+
+            print("Meeting link fetched.")
+
             return final
-        except Exception as e:
-            print(f"{e}\n{traceback.print_exc()}")
+        except Exception as _:
+            print("Meeting link could not be fetched.\nLogging...")
+            logVar = traceback.format_exc()
+            logFile = open("./logs/API-Logs.txt", "w")
+            logFile.write(logVar)
+            logFile.close()
             return
