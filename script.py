@@ -2,7 +2,6 @@ import pandas as pd
 import sys
 import time
 import traceback
-import logging
 
 sys.path.append("./helpers")
 from browser_helper import driver, url, get_keys, submit_form, click_join
