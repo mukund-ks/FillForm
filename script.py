@@ -40,7 +40,7 @@ def main() -> None:
 
     driver.get(join)
 
-    driver.implicitly_wait(15)
+    time.sleep(15)
 
     try:
         click_join()
