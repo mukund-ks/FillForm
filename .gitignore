@@ -2,4 +2,5 @@
 submission_db.csv
 geckodriver.log
 token.json
+credentials.json
 __pycache__
